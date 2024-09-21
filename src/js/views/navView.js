@@ -23,13 +23,6 @@ class NavView {
    }
    #navListData(data){
     const id = window.location.hash.slice(1);
-    
-  //   <div class="preview__user-generated">
-  //   <svg>
-  //   <use href="${icons}#icon-user"></use>
-  // </svg>
-  //   </div>
-
      return `
      <ul class="results">
      <li class="preview">
@@ -42,9 +35,6 @@ class NavView {
        <div class="preview__data">
          <h4 class="preview__title">${data.title}</h4>
          <p class="preview__publisher">${data.publisher}</p>
- 
-
-
        </div>
      </a>
    </li>

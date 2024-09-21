@@ -13,6 +13,7 @@ const countrlerRecipes = async function () {
   const id = window.location.hash.slice(1)
   if (!id) return
   try {
+
     recipeView.spinner()
     //Load recepe
     await modal.LoadRecepe(id)
@@ -28,7 +29,7 @@ const controlSearchResult = async function(){
   if(!quary) return
 
   modal.loadSeachResults(quary)
-//  const data = modal.loadSeachResults(quary)
+//  const data = modal.loadSeachResults(quary) 
 //  navView.getNavItemList(data)
 
 }
@@ -46,5 +47,6 @@ const controlSearchResult = async function(){
 const init = function(){
 recipeView.addHandlerRender(countrlerRecipes)
 searchVeiw.seachHandlerResult(controlSearchResult)
+
 }
 init()

@@ -142,3 +142,75 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 700px) {
+
+  .search {
+    background-color: #fff;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    transition: all 0.3s;
+    border: 1px rgb(212, 207, 207) solid;
+
+      &__field {
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 2rem;
+    width: 10rem;
+  }
+  &__btn {
+    font-weight: 100;
+    font-family: inherit;
+  }
+  }
+
+  .header {
+    grid-area: head;
+    background-color: $color-grey-light-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    &__logo {
+      margin-left: 1rem;
+      height: 2rem;
+      display: none;
+    }
+  }
+
+  .nav {
+    margin-right: 2rem;
+  
+    &__btn {
+      height: 100%;
+      font-family: inherit;
+      color: inherit;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 0.7rem;
+      transition: all 0.3s;
+  
+      display: flex;
+      align-items: center;
+  
+      svg {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-primary;
+        margin-right: 0.5rem;
+        transform: translateY(-1px);
+      }
+    }
+    }
+    .bookmarks {
+      padding: 1rem 0;
+      position: absolute;
+    }
+  }

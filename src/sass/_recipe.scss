@@ -58,7 +58,7 @@
     }
 
     @media only screen and (max-width: $bp-medium) {
-      width: 70%;
+      width: 50%;
     }
   }
 
@@ -175,5 +175,186 @@
 
   &__publisher {
     font-weight: 700;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .recipe {
+    background-color: $color-grey-light-1;
+  
+    ///////////
+    // FIGURE
+    &__fig {
+      height: 32rem;
+      position: relative;
+      // transform: scale(1.04) translateY(-1px);
+      transform-origin: top;
+  
+      &::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to right bottom,
+          $color-grad-1,
+          $color-grad-2
+        );
+        opacity: 0.6;
+      }
+    }
+  
+    &__img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    &__title {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 20%) skewY(-6deg);
+      color: #fff;
+      font-weight: 500;
+      font-size: 2rem;
+      text-transform: uppercase;
+      width: 50%;
+      line-height: 1.75;
+      text-align: center;
+  
+      span {
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 1rem 1.5rem;
+        background-image: linear-gradient(
+          to right bottom,
+          $color-grad-1,
+          $color-grad-2
+        );
+      }
+  
+      @media only screen and (max-width: $bp-medium) {
+        width: 50%;
+      }
+    }
+  
+    ///////////
+    // DETAILS
+    &__details {
+      display: flex;
+      align-items: center;
+      padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+  
+    &__info {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+  
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  
+    &__info-icon {
+      height: 2rem;
+      width: 2rem;
+      fill: $color-primary;
+      margin-right: 1rem;
+    }
+  
+    &__info-data {
+      margin-right: 0.2rem;
+      font-weight: 500;
+    }
+  
+    &__info-buttons {
+      display: flex;
+      margin-left: 1rem;
+      transform: translateY(-1px);
+    }
+  
+    &__user-generated {
+      background-color: darken($color-grey-light-2, 2%);
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 5rem;
+  
+      margin-left: auto;
+      margin-right: 1rem;
+  
+      svg {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-primary;
+      }
+    }
+  
+    ///////////
+    // INGREDIENTS
+    &__ingredients {
+      padding: 5rem 0.5rem;
+      font-size: 1.5rem;
+      line-height: 1;
+      background-color: $color-grey-light-2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__ingredient-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+      list-style: none;
+    }
+  
+    &__ingredient {
+      display: flex;
+    }
+  
+    &__icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      fill: $color-primary;
+      margin-right: 0.7rem;
+      flex: 0 0 auto;
+      margin-top: 0.1rem;
+    }
+  
+    &__quantity {
+      margin-right: 0.3rem;
+      flex: 0 0 auto;
+    }
+  
+    ///////////
+    // DIRECTIONS
+    &__directions {
+      padding: 4rem 2rem;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__directions-text {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: $color-grey-dark-2;
+    }
+  
+    &__publisher {
+      font-weight: 700;
+    }
   }
 }

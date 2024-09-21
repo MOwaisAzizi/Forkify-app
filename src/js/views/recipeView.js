@@ -1,9 +1,11 @@
 // libray change 0.3,3,5...1/3,7/2
 import { Fraction } from 'fractional';
+import { mark } from 'regenerator-runtime';
 import icons from 'url:../../img/icons.svg'
 
 class Recepeview {
  #parentEl = document.querySelector('.recipe')
+//  #bookmarkEL = document.querySelector('.bookmarks__list')
  #data
  #ErrorMessage = 'Sorry we could not find that racipe. Plaese try again!'
  #Message = ''
@@ -11,9 +13,31 @@ class Recepeview {
  render(data){
     this.#data = data
     const markup = this.#generatorMarkup()
-    this.#clear() ;
+    this.#clear();
     this.#parentEl.insertAdjacentHTML('afterbegin',markup)
+    document.querySelector('.bookmark').addEventListener('click',function(){
+     const marks = document.querySelector('.bookmarks__list')
+     const mark = document.querySelector('.message-mark')
+     mark.innerHTML = ''
+     let marksData = ''
+    marksData += `<ul class="results">
+     <li class="preview">
+     <a class="preview__link
+         "href="#${data.id}">
+       <figure class="preview__fig">
+         <img src="${data.image}" alt="Test" />
+       </figure>
+       <div class="preview__data">
+         <h4 class="preview__title">${data.title}</h4>
+         <p class="preview__publisher">${data.publisher}</p>
+       </div>
+     </a>
+   </li>
+   </ul>`
+     marks.insertAdjacentHTML('afterbegin',marksData )
+    })
  }
+
 
  #clear(){
     this.#parentEl.innerHTML = ''
@@ -111,7 +135,7 @@ addHandlerRender(handler){
             </svg>
           </div>
           <button class="btn--round">
-            <svg class="">
+            <svg class="bookmark">
               <use href="${icons}#icon-bookmark-fill"></use>
             </svg>
           </button>
